@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Download your video</title>
+</head>
+<body>
+    <div class="container">
+        <img src="../static/Download.svg" alt="Download" class="logo">
+        {% if message %}
+         <p class="message">{{ message | safe }}</p>
+
+        {% endif %}
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <h3>Link</h3>
+                <input type="text" name="link" placeholder="Link of the video">
+            </div>
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+    
+</body>
+</html>
